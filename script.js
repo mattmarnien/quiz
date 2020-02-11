@@ -19,7 +19,7 @@ var officeQuestions = [{
     choice2: "Dwight Schrute",
     choice3: "Stanley Hudson",
     choice4: "Creed Bratton",
-    a: "Creed Bratton"
+    a: "Stanley Hudson"
 
 },
 {
@@ -31,68 +31,68 @@ var officeQuestions = [{
     a: "CeCe"
 
 }, {
-    q: "Question 3 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "Michael Scott eventually marries who?",
+    choice1: "Jan",
+    choice2: "Angela",
+    choice3: "Holly",
+    choice4: "Meredith",
+    a: "Holly"
 }, {
-    q: "Question 4 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "What does Jim trade for a telescope at the office yard sale?",
+    choice1: "A packet of miracle legumes",
+    choice2: "A neon beer sign",
+    choice3: "Homemade Salsa",
+    choice4: "Dallas: The Board Game",
+    a: "A packet of miracle legumes"
 }, {
-    q: "Question 5 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "What was Oscar and Kevin's contribution to the office olympics?",
+    choice1: "Dunder Ball",
+    choice2: "Hate Ball",
+    choice3: "Flonkerton",
+    choice4: "Who can fit the most M&M's in their mouth",
+    a: "Hate Ball"
 }, {
-    q: "Question 6 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "According to Dwight, those who can't farm, farm ______.",
+    choice1: "Beets",
+    choice2: "'Worm'",
+    choice3: "Corn",
+    choice4: "Celery",
+    a: "Celery"
 }, {
-    q: "Question 7 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "Angela gets married to ______.",
+    choice1: "Dwight and Andy",
+    choice2: "Andy and the Senator",
+    choice3: "Dwight and the Senator",
+    choice4: "Dwight, Andy, and the Senator",
+    a: "Dwight and the Senator"
 }, {
-    q: "Question 8 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "As a prank, Jim does what to Dwight's stapler?",
+    choice1: "Sells it to Kevin",
+    choice2: "Hides it in the ceiling",
+    choice3: "Takes it apart and gives the pieces back as christmas presents",
+    choice4: "Puts it in Jello",
+    a: "Puts it in Jello"
 }, {
-    q: "Question 9 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "Oscar hides his romance with this character early in the show.",
+    choice1: "Ryan",
+    choice2: "Gil",
+    choice3: "Kevin",
+    choice4: "Angela",
+    a: "Gil"
 }, {
-    q: "Question 10 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "Kelly Kapoor works in what department?",
+    choice1: "Quality Assurance",
+    choice2: "Sales",
+    choice3: "Human Resources",
+    choice4: "Customer Service",
+    a: "Customer Service"
 }, {
-    q: "Question 11 goes here",
-    choice1: "Choice 1",
-    choice2: "Choice 2",
-    choice3: "Choice 3",
-    choice4: "Choice 4",
-    a: "answer"
+    q: "Which actor initially replaced Michael Scott(Steve Carell) when he left the show?",
+    choice1: "Ray Romano",
+    choice2: "Ricky Gervais",
+    choice3: "Will Ferrell",
+    choice4: "John Krasinski",
+    a: "Will Ferrell"
 }]
 
 function nextQuestion(i) {
@@ -139,6 +139,7 @@ playBtn.addEventListener("click", function () {
 button1.addEventListener("click", function () {
     if (officeQuestions[count].choice1 !== officeQuestions[count].a) {
         score--;
+        console.log(score);
     }
     else {
         score++;
@@ -153,6 +154,8 @@ button1.addEventListener("click", function () {
 button2.addEventListener("click", function () {
     if (officeQuestions[count].choice2 !== officeQuestions[count].a) {
         score--;
+        console.log(score);
+        
     }
     else {
         score++;
@@ -165,6 +168,7 @@ button2.addEventListener("click", function () {
 button3.addEventListener("click", function () {
     if (officeQuestions[count].choice3 !== officeQuestions[count].a) {
         score--;
+        console.log(score);
     }
     else {
         score++;
@@ -177,6 +181,7 @@ button3.addEventListener("click", function () {
 button4.addEventListener("click", function () {
     if (officeQuestions[count].choice4 !== officeQuestions[count].a) {
         score--;
+        console.log(score);
     }
     else {
         score++;
