@@ -10,8 +10,9 @@ var div3 = document.createElement("div");
 var button3 = document.createElement("button");
 var div4 = document.createElement("div");
 var button4 = document.createElement("button");
+var result = document.getElementById("resultText");
 var score = 0;
-console.log(score);
+
 
 var officeQuestions = [{
     q: "Who was never a manager of Dunder-Mifflin Scranton?",
@@ -116,17 +117,25 @@ playBtn.addEventListener("click", function () {
     document.getElementById("image").remove();
     playBtn.remove();
 
-    choices.appendChild(div1)
+
+
+    choices.appendChild(div1);
+    div1.setAttribute("class", "row m-2");
     div1.appendChild(button1);
+    button1.setAttribute("class", "btn-primary col-4 offset-1");
 
-    choices.appendChild(div2)
-    div2.appendChild(button2);
+   ;
+    div1.appendChild(button2);
+    button2.setAttribute("class", "btn-warning col-4 offset-1");
 
-    choices.appendChild(div3)
-    div3.appendChild(button3);
+    choices.appendChild(div2);
+    div2.setAttribute("class", "row m-2");
+    div2.appendChild(button3);
+    button3.setAttribute("class", "btn-info col-4 offset-1");
 
-    choices.appendChild(div4)
-    div4.appendChild(button4);
+   
+    div2.appendChild(button4);
+    button4.setAttribute("class", "btn-danger col-4 offset-1");
 
     question.setAttribute("style", "font-size:24px");
 
@@ -140,10 +149,12 @@ button1.addEventListener("click", function () {
     if (officeQuestions[count].choice1 !== officeQuestions[count].a) {
         score--;
         console.log(score);
+        result.textContent = "Wrong. -2 seconds."
     }
     else {
         score++;
         console.log(score);
+        result.textContent = "Correct!"
     }
     count++
     nextQuestion(count);
@@ -155,11 +166,14 @@ button2.addEventListener("click", function () {
     if (officeQuestions[count].choice2 !== officeQuestions[count].a) {
         score--;
         console.log(score);
+        result.textContent = "Wrong. -2 seconds."
         
     }
     else {
         score++;
         console.log(score);
+        result.textContent = "Correct!"
+
     }
     count++
     nextQuestion(count);
@@ -169,10 +183,12 @@ button3.addEventListener("click", function () {
     if (officeQuestions[count].choice3 !== officeQuestions[count].a) {
         score--;
         console.log(score);
+        result.textContent = "Wrong. -2 seconds."
     }
     else {
         score++;
         console.log(score);
+        result.textContent = "Correct!"
     }
     count++
     nextQuestion(count);
@@ -182,10 +198,12 @@ button4.addEventListener("click", function () {
     if (officeQuestions[count].choice4 !== officeQuestions[count].a) {
         score--;
         console.log(score);
+        result.textContent = "Wrong. -2 seconds."
     }
     else {
         score++;
         console.log(score);
+        result.textContent = "Correct!"
     }
     count++
     nextQuestion(count);
