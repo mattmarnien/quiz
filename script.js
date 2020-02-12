@@ -211,7 +211,7 @@ button1.addEventListener("click", function () {
     if (officeQuestions[count].choice1 !== officeQuestions[count].a) {
 
         
-        result.textContent = "Wrong. -2 seconds."
+        result.textContent = "Wrong. -5 seconds."
         timer = timer -5;
     }
     else {
@@ -228,7 +228,7 @@ button1.addEventListener("click", function () {
 button2.addEventListener("click", function () {
     if (officeQuestions[count].choice2 !== officeQuestions[count].a) {
         
-        result.textContent = "Wrong. -2 seconds."
+        result.textContent = "Wrong. -5 seconds."
         timer = timer -5;
         
     }
@@ -244,7 +244,7 @@ button2.addEventListener("click", function () {
 button3.addEventListener("click", function () {
     if (officeQuestions[count].choice3 !== officeQuestions[count].a) {
        
-        result.textContent = "Wrong. -2 seconds."
+        result.textContent = "Wrong. -5 seconds."
         timer = timer -5;
     }
     else {
@@ -258,7 +258,7 @@ button3.addEventListener("click", function () {
 button4.addEventListener("click", function () {
     if (officeQuestions[count].choice4 !== officeQuestions[count].a) {
         
-        result.textContent = "Wrong. -2 seconds."
+        result.textContent = "Wrong. -5 seconds."
         timer = timer -5;
     }
     else {
