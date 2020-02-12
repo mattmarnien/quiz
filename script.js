@@ -10,8 +10,15 @@ var div3 = document.createElement("div");
 var button3 = document.createElement("button");
 var div4 = document.createElement("div");
 var button4 = document.createElement("button");
+var buttonRetry = document.createElement("button")
+var scoreForm = document.createElement("form");
+var scoreInput = document.createElement("input");
 var result = document.getElementById("resultText");
+var timerText = document.getElementById("timer");
+var timer = 60;
 var score = 0;
+
+
 
 
 var officeQuestions = [{
@@ -98,15 +105,43 @@ var officeQuestions = [{
 
 function nextQuestion(i) {
 
-    if (i < officeQuestions.length) {
+    if (i < officeQuestions.length && timer !== 0) {
         question.textContent = (officeQuestions[i].q);
         button1.textContent = (officeQuestions[i].choice1);
         button2.textContent = (officeQuestions[i].choice2);
         button3.textContent = (officeQuestions[i].choice3);
         button4.textContent = (officeQuestions[i].choice4);
     }
-    else{
-        return;
+
+    else if( i === (officeQuestions.length) && timer !== 0){
+        timerText.remove();
+        question.textContent = "Congratulations, you have finished the quiz with " + timer + " seconds left! Please enter your name for the high score list!";
+        button1.remove();
+        button2.remove();
+        button3.remove();
+        button4.remove();
+        score = timer;
+        scoreInput.setAttribute("type", "text");
+        // scoreForm.setAttribute("onSubmit", "return false");
+        scoreInput.setAttribute("placeholder", "Your Name Here");
+        scoreInput.setAttribute("class", "col-8 offset-2");
+        choices.appendChild(scoreForm);
+        scoreForm.appendChild(scoreInput);
+        localStorage.setItem("finalScore", score);
+        
+
+
+    }
+    else if (timer <= 0) {
+        timerText.remove();
+        question.textContent = "You have run out of time. Game over";
+        button1.remove();
+        button2.remove();
+        button3.remove();
+        button4.remove();
+
+
+
     }
 
 }
@@ -142,18 +177,44 @@ playBtn.addEventListener("click", function () {
 
     nextQuestion(count);
 
+
+
+setInterval(function(){
+    timer--;
+    timerText.textContent = "Time Left: " +timer;
+
+    if (timer <= 0){
+        clearInterval();
+        timerText.remove();
+        question.textContent = "You have run out of time. Game over";
+        button1.remove();
+        button2.remove();
+        button3.remove();
+        button4.remove();
+        buttonRetry.setAttribute("class", "btn-primary col-6 offset-3");
+        buttonRetry.textContent = "Play Again?";    
+        div1.appendChild(buttonRetry);
+  
+
+    }
+
+},1000);
+
 });
+
+
 
 
 button1.addEventListener("click", function () {
     if (officeQuestions[count].choice1 !== officeQuestions[count].a) {
-        score--;
-        console.log(score);
+
+        
         result.textContent = "Wrong. -2 seconds."
+        timer = timer -5;
     }
     else {
-        score++;
-        console.log(score);
+        
+        
         result.textContent = "Correct!"
     }
     count++
@@ -164,14 +225,13 @@ button1.addEventListener("click", function () {
 
 button2.addEventListener("click", function () {
     if (officeQuestions[count].choice2 !== officeQuestions[count].a) {
-        score--;
-        console.log(score);
+        
         result.textContent = "Wrong. -2 seconds."
+        timer = timer -5;
         
     }
     else {
-        score++;
-        console.log(score);
+        
         result.textContent = "Correct!"
 
     }
@@ -181,13 +241,12 @@ button2.addEventListener("click", function () {
 });
 button3.addEventListener("click", function () {
     if (officeQuestions[count].choice3 !== officeQuestions[count].a) {
-        score--;
-        console.log(score);
+       
         result.textContent = "Wrong. -2 seconds."
+        timer = timer -5;
     }
     else {
-        score++;
-        console.log(score);
+        
         result.textContent = "Correct!"
     }
     count++
@@ -196,20 +255,41 @@ button3.addEventListener("click", function () {
 });
 button4.addEventListener("click", function () {
     if (officeQuestions[count].choice4 !== officeQuestions[count].a) {
-        score--;
-        console.log(score);
+        
         result.textContent = "Wrong. -2 seconds."
+        timer = timer -5;
     }
     else {
-        score++;
-        console.log(score);
+    
         result.textContent = "Correct!"
     }
     count++
     nextQuestion(count);
-
 });
 
+buttonRetry.addEventListener("click", function(){
+    location.reload();
+});
+
+scoreForm.addEventListener("submit", function(event){
+event.preventDefault();
+var scoreName = scoreInput.value;
+var scoreObj = {
+    Name: scoreName,
+    Score: score
+};
+var obj = JSON.stringify(scoreObj);
+
+localStorage.setItem("scoreObj", obj);
+location.href="highscore.html";
+
+
+
+
+
+
+
+});
 
 
 

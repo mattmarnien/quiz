@@ -1,7 +1,10 @@
 body{
     background-color: whitesmoke;
 }
-
-.answerBtn {
-    
+.jumbotron {
+    background-image: url(images/officeHead.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: bisque;
 }

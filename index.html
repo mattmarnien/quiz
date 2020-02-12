@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="litera.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Dunder-Mifflin Scranton</title>
-    
+
 </head>
+
 <body>
-    <header class="header text-left text-top mt-1 ml-1">
-        <a href="highscore.html"> View High Scores </a>
+    <section class="container"></section>
+    <header class="header jumbotron ">
+    
+      
+        <h1 class="row text-center">The Office Quiz </h1>
+
     </header>
-    <section class="row">
-        <main class="col-md-6 offset-3 mt-5">
-        <h1 class="text-center col-md-6 offset-3 mt-5" id="title">The Office Quiz</h1>
+    <a class="ml-5" href="highscore.html"> View High Scores </a>
+    
         <section class="row">
-        <img id="image" class ="col-md-6 offset-3 center w-100" src="https://i.pinimg.com/originals/9d/f8/3a/9df83a4145663814b07f03d9eec50fae.jpg" alt="The Office - Building">
-        </section>
-        <section id="answerList" class="card-text-center">
+            <main class="card col-8 offset-2 w-75 pb-5">
+                <section class="col-md-6 offset-3 mt-5">
+                    <h3 class="text-center col-6 offset-3" id="title">Test your Office Knowledge. Wrong answers lose time.</h3>
+                    <section class="row">
+                        <img id="image" class="col-6 offset-3 center"
+                            src="https://i.pinimg.com/originals/9d/f8/3a/9df83a4145663814b07f03d9eec50fae.jpg"
+                            alt="The Office - Building">
+                    </section>
 
+                    <section id="answerList" class="card-text-center">
+                    </section>
+                </section>
+            </main>
         </section>
+    
 
-           <section class ="row mt-4">
-        <button type="button" class="btn btn-primary col-md-4 offset-1 text-center p-2" id="playGame">
+
+    <section class="row mt-4">
+        <button type="button" class="btn btn-primary col-4 offset-4 text-center" id="playGame">
             Play Game
         </button>
-
-        <section>
-            <p id="resultText" class="text-center"></p>
-        </section>
-            
-        <!-- <button type="buttong" class="btn btn-danger col-md-4 offset-2 text-center p-2">
-            Other Option
-        </button> -->
     </section>
-</main>
 
-    </main>
-  
-  
+    <section>
 
+        <p id="resultText" class="text-center"></p>
+    </section>
 
-
-
-
-
-
-
-
-
+    <section>
+        <h2 id="timer" class="col-4 offset-4 text-center"></h2>
+    </section>
+    </section>
     <script src=script.js></script>
-    
+
 </body>
+
 </html>

@@ -8,19 +8,44 @@
     <title>Office Quiz High Scores</title>
 </head>
 <body>
-    <main class ="row">
-        <h1 class= "col-md-4 offset-4 mt-5"> High Scores: </h1>
-        <ol>
+    <header class="header jumbotron ">
+    
+      
+        <h1 class="row text-center">The Office Quiz </h1>
+
+    </header>
+    <main class ="container">
+        <section class="row">
+            <a class="ml-5" href="index.html"> Return to Game </a>
+        <h1 class= "col-md-4 offset-4"> High Scores </h1>
+        </section>
+        <section class="row">
+        <h2 class="card col-md-8 offset-2 w-75 text-center">
+        <ol id="scoreList">
+        
+
 
         </ol>
+        </h2>
+        </section>
     </main>
-        <section class="row">
-
-        <form class=" col-md-4 offset-4">
-            <input type="text" placeholder="Your name here" id="highscoreName">
-        </form>
-    </section>
+       
     
+    <script type="text/javascript">
+        var newScore = localStorage.getItem("scoreObj");
+        var returnObj = JSON.parse(newScore);
+        var highScoreArr = [];
+        var scoreList = document.getElementById("scoreList");
+        highScoreArr.push(returnObj);
+        for (let i = 0; i < highScoreArr.length; i++){
+            var newLi = document.createElement("li");
+            // newLi.setAttribute("class", "border-bottom")
+            newLi.textContent = highScoreArr[i].Name + ": " + highScoreArr[i].Score;
+            console.log(newLi.textContent);
+            scoreList.appendChild(newLi);
+            
+        }
+    </script>
     
 </body>
 </html>
