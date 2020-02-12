@@ -35,8 +35,8 @@
         var newScore = localStorage.getItem("scoreObj");
         var returnObj = JSON.parse(newScore);
         var highScoreArr = [];
-        var scoreList = document.getElementById("scoreList");
         highScoreArr.push(returnObj);
+        console.log(highScoreArr);
         for (let i = 0; i < highScoreArr.length; i++){
             var newLi = document.createElement("li");
             // newLi.setAttribute("class", "border-bottom")

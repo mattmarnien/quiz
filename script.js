@@ -17,6 +17,7 @@ var result = document.getElementById("resultText");
 var timerText = document.getElementById("timer");
 var timer = 60;
 var score = 0;
+var gameComplete = false;
 
 
 
@@ -114,6 +115,7 @@ function nextQuestion(i) {
     }
 
     else if( i === (officeQuestions.length) && timer !== 0){
+        gameComplete =true;
         timerText.remove();
         question.textContent = "Congratulations, you have finished the quiz with " + timer + " seconds left! Please enter your name for the high score list!";
         button1.remove();
@@ -132,17 +134,17 @@ function nextQuestion(i) {
 
 
     }
-    else if (timer <= 0) {
-        timerText.remove();
-        question.textContent = "You have run out of time. Game over";
-        button1.remove();
-        button2.remove();
-        button3.remove();
-        button4.remove();
+    // else if (timer <= 0) {
+    //     timerText.remove();
+    //     question.textContent = "You have run out of time. Game over";
+    //     button1.remove();
+    //     button2.remove();
+    //     button3.remove();
+    //     button4.remove();
 
 
 
-    }
+    // }
 
 }
 
@@ -183,7 +185,7 @@ setInterval(function(){
     timer--;
     timerText.textContent = "Time Left: " +timer;
 
-    if (timer <= 0){
+    if (timer <= 0 && gameComplete === false){
         clearInterval();
         timerText.remove();
         question.textContent = "You have run out of time. Game over";
@@ -274,13 +276,15 @@ buttonRetry.addEventListener("click", function(){
 scoreForm.addEventListener("submit", function(event){
 event.preventDefault();
 var scoreName = scoreInput.value;
-var scoreObj = {
+var newScoreObj = {
     Name: scoreName,
     Score: score
-};
-var obj = JSON.stringify(scoreObj);
+}
+var scoreArr = [localStorage.getItem("scoreObj")];
+scoreArr.push(newScoreObj);
+var scoreArr = JSON.stringify(newScoreObj);
 
-localStorage.setItem("scoreObj", obj);
+localStorage.setItem("scoreObj", scoreArr);
 location.href="highscore.html";
 
 
