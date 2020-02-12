@@ -40,7 +40,7 @@ var officeQuestions = [{
     a: "CeCe"
 
 }, {
-    q: "Michael Scott eventually marries who?",
+    q: "Who does Michael Scott eventually marry?",
     choice1: "Jan",
     choice2: "Angela",
     choice3: "Holly",
@@ -75,7 +75,7 @@ var officeQuestions = [{
     choice4: "Dwight, Andy, and the Senator",
     a: "Dwight and the Senator"
 }, {
-    q: "As a prank, Jim does what to Dwight's stapler?",
+    q: "What is one prank Jim does involving Dwight's stapler?",
     choice1: "Sells it to Kevin",
     choice2: "Hides it in the ceiling",
     choice3: "Takes it apart and gives the pieces back as christmas presents",
