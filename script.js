@@ -276,15 +276,22 @@ buttonRetry.addEventListener("click", function(){
 scoreForm.addEventListener("submit", function(event){
 event.preventDefault();
 var scoreName = scoreInput.value;
+var newScore = [];
+var oldScore = JSON.parse(localStorage.getItem("score"));
+if (oldScore !== null){
+    newScore = oldScore;
+}
+
 var newScoreObj = {
     Name: scoreName,
     Score: score
 }
-var scoreArr = [localStorage.getItem("scoreObj")];
-scoreArr.push(newScoreObj);
-var scoreArr = JSON.stringify(newScoreObj);
 
-localStorage.setItem("scoreObj", scoreArr);
+newScore.push(newScoreObj);
+console.log(newScore);
+var scoreArr = JSON.stringify(newScore);
+
+localStorage.setItem("score", scoreArr);
 location.href="highscore.html";
 
 

@@ -32,15 +32,13 @@
        
     
     <script type="text/javascript">
-        var newScore = localStorage.getItem("scoreObj");
+        var newScore = localStorage.getItem("score");
         var returnObj = JSON.parse(newScore);
-        var highScoreArr = [];
-        highScoreArr.push(returnObj);
-        console.log(highScoreArr);
-        for (let i = 0; i < highScoreArr.length; i++){
+        console.log(returnObj);
+        for (let i = 0; i < returnObj.length; i++){
             var newLi = document.createElement("li");
             // newLi.setAttribute("class", "border-bottom")
-            newLi.textContent = highScoreArr[i].Name + ": " + highScoreArr[i].Score;
+            newLi.textContent = returnObj[i].Name + ": " + returnObj[i].Score;
             console.log(newLi.textContent);
             scoreList.appendChild(newLi);
             
